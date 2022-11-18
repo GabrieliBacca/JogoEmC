@@ -1,0 +1,547 @@
+#include <stdio.h>
+#include <string.h>
+//Declarando variaveis globais para dentro e fora da função Int Main//
+int x = 0, y = 0, i = 0, n1 = 0, n2 = 0, n3 = 0, n4 = 0, n5 = 0;
+int decisao = 0;
+int main()
+{
+//Declarando variaveis internas//
+int teste = 0, j = 0;
+int op1, op2, op3, op4,op5, proce, proce2;
+char start[6] = "START", inicio[15];
+char adaga[30]="adaga";
+char ada[30];
+char sa[30];
+char sair[30]="sair";
+while (x == 0){
+void fase (void);
+void casoUm (void);
+void casoDois (void);
+void casoTres (void);
+//introdução//
+printf ("------Bem vindo ao jogo-------\n");
+printf ("\n");
+printf ("Escreva START para começar\n");
+printf ("\n");
+scanf ("%s", &inicio);
+while (0 != strcmp (inicio,start)){
+printf ("\n");
+printf ("Ei, vamos começar, anda logo, escreva START\n");
+scanf ("%s", &inicio);
+}
+//ensinando os comandos ao jogador//
+printf ("----------Guia Básico do Jogo----------\n");
+printf ("O jogo vai usar mecânicas de alternativas\n");
+printf ("\n");
+printf ("Exemplo:\n");
+printf ("1. pensar\n");
+printf ("2. agir\n");
+printf ("3. esperar\n");
+printf ("\n");
+scanf ("%d", &teste);
+printf ("\n");
+while (j == 0){ //teste para saber se entendeu//
+if (teste == 1 || teste == 2 || teste == 3){
+printf ("Ah então vc entendeu!!!\n");
+j++;
+} else {
+printf ("Alternativa inválida, redigite\n");
+scanf ("%d", &teste);
+printf ("\n");
+}
+}
+//Carregando...//
+printf ("\n");
+printf ("Agora que você sabe como funciona o nosso jogo... podemos entrar nesse mundo
+de suspense e aventura");
+printf ("\n");
+printf ("Você está entrando no mundo de ...\n");
+printf ("\n");
+printf ("-AHHHHHHHHHHHHHH\n"); //Leve contexto//
+printf ("-Onde eu estou?\n");
+printf ("\n");
+printf ("Narrador: Você acorda na beira de um rio perdido, com a cabeça dolorida e sem
+lembrar de nada\n");
+printf ("\n");
+//Começo da fase 1//
+printf ("---Opções---\n");
+printf ("1. correr\n");
+printf ("2. olhar ao redor\n");
+printf ("3. falar: Alguém aiiii???\n");
+printf ("\n");
+fase ();
+scanf ("%d",&n2); //A resposta vai ser usada mais lá para frente, agora vem alguns
+ajustes que serão usados no futuro//
+printf ("\n");
+switch (n2){
+case 1:
+break;
+case 2:
+break;
+case 3:
+break;
+default:
+printf ("Alternativa inválida, redigite\n");
+scanf ("%d", &n2);
+printf ("\n");
+}
+if (n1 == 1){ //Trazendo as funções para dentro da função int main conforme a escolha
+do jogador//
+casoUm ();
+}
+if (n1 == 2){
+casoDois ();
+}
+if (n1 == 3){
+casoTres ();
+}
+if (n2 != 0){ //Tenta achar pistas para o jogo ter história//
+printf ("Voce pega a mochila e começa a revirar ela tentando encontrar algo\n");
+printf ("Até que você encontra uma...\n");
+printf ("1. folha de jornal\n");
+printf ("2. carta\n");
+printf ("\n");
+scanf ("%d", &n3);
+printf ("\n");
+switch (n3){
+case 1: //Pista 1//
+printf ("** JORNAL NACIONAL **\n");
+printf
+("-------------------------------------------------------------------------------------------------------------------------
+--------\n");
+printf ("Matéria 1: Dois biólogos estão desaparecidos!!\n");
+printf ("Entrevistamos as famílias e foi informado que eles estavam a caminho de
+uma missão em Madagascar e já era para terem voltado!!!\n");
+printf ("Já foi enviado ajuda\n");
+printf ("\n");
+printf ("Matéria 2: Entenda mais sobre o caso de caça ilegal na ilha de
+Madagascar.\n");
+printf ("\n");
+printf ("Matéria 3: Conheça a planta medicinal em extinção! Ela é capaz de ajudar
+com doenças cardiovasculares e aliviar dores musculares\n");
+printf
+("-------------------------------------------------------------------------------------------------------------------------
+--------\n");
+printf("\n");
+printf("Deseja ler a carta também?\n1.Sim\n2.Não\n");
+scanf("%d",&n4);
+switch(n4){
+case 1:
+printf ("CARTA DE CARLOS MONTERO\n");
+printf ("\n");
+printf ("Tive que deixar você porque estava inconsciente, neste lugar você ficará
+seguro mas logo que acordar, fuja!!!\n");
+printf ("caçadores de recompensas estão atrás de nós! Segui caminho para
+perto dos limoeiros descendo o rio.\n");
+printf ("Estarei completando nossa missão, me encontre, por favor.\n");
+printf ("\n");
+printf ("Ass: Carlos Montero\n");
+break;
+case 2:
+printf("ok então!");
+x = 1;
+y = 0;
+break;
+}
+x = 1;
+y = 0;
+break;
+case 2: //Pista 2//
+printf ("CARTA DE CARLOS MONTERO\n");
+printf ("\n");
+printf ("Tive que deixar você porque estava inconsciente, neste lugar você ficará
+seguro mas logo que acordar, fuja!!!\n");
+printf ("caçadores de recompensas estão atrás de nós! Segui caminho para perto
+dos limoeiros descendo o rio.\n");
+printf ("Estarei completando nossa missão, me encontre, por favor.\n");
+printf ("\n");
+printf ("Ass: Carlos Montero\n");
+printf("\n");
+printf("Deseja ler a folha do jornal também?\n1.Sim\n2.Não\n");
+scanf("%d",&n5);
+switch(n5){
+case 1:
+printf ("** JORNAL NACIONAL **\n");
+printf
+("-------------------------------------------------------------------------------------------------------------------------
+--------\n");
+printf ("Matéria 1: Dois biólogos estão desaparecidos!!\n");
+printf ("Entrevistamos as famílias e foi informado que eles estavam a caminho de
+uma missão em Madagascar e já era para terem voltado!!!\n");
+printf ("Já foi enviado ajuda\n");
+printf ("\n");
+printf ("Matéria 2: Entenda mais sobre o caso de caça ilegal na ilha de
+Madagascar.\n");
+printf ("\n");
+printf ("Matéria 3: Conheça a planta medicinal em extinção! Ela é capaz de ajudar
+com doenças cardiovasculares e aliviar dores musculares\n");
+printf
+("-------------------------------------------------------------------------------------------------------------------------
+--------\n");
+break;
+case 2:
+printf("ok então!");
+break;
+}
+x = 1;
+y = 0;
+break;
+}
+printf ("\n");
+printf ("FIM DA PRIMEIRA FASE\n");
+printf ("\n");
+}
+}
+//Começa fase 2//
+while (y == 0){
+printf("Agora você tem que ir atrás de seu amigo, mas lembre,caçadores estão atrás de
+você!\nDeseja levar algo?\n");
+printf("1 . Sim\n");
+printf("2 . Não\n"); //mais para frente, isso não vai ajudar//
+scanf("%d",&op1);
+printf ("\n");
+if(op1==1){ //Se a escolha de pegar algo for sim//
+printf("tem uma adaga em baixo da árvore, pegue e siga caminho descendo o rio\n");
+printf("Digite \"adaga\" para prosseguir\n");
+scanf("%s", ada);
+printf ("\n");
+if(strcmp (adaga,ada)==0){
+printf("Ok, vamos lá!\n");
+}
+else{ //Se o jogador se confundir na escrita//
+while(adaga!=ada){
+printf("escreva novamente\n");
+scanf("%s", ada);
+printf ("\n");
+if(strcmp (adaga,ada)==0){
+printf("Ok, vamos lá!\n");
+printf ("\n");
+break;
+}
+}
+}
+printf("Narrador:você desde o rio e no caminho encontra um enxame de abelhas
+venenosas\nVocê tem duas opções: \n");
+printf("1.Entrar no rio, se proteger mas se molhar inteiro\n");
+printf("2.Ignorar as picadas e ir atrás do amigo\n");
+scanf("%d", &op2);
+printf ("\n");
+switch(op2){
+case 2:
+printf("Ops, picadas venenosas\nGAME OVER\n");
+y++;
+break;
+case 1: //Escolheu a opção certa e o jogo continua//
+printf("Agora as abelhas foram embora, saia do rio para encontrar seu amigo\n");
+printf("Digite \"sair\" para prosseguir\n");
+scanf("%s", sa);
+printf ("\n");
+if(strcmp (sair,sa)==0){
+printf("Você saiu do rio,agora continue descendo até chegar perto dos
+limoeiros\n"); //Se o jogador leu a carta vai saber que o amigo dele está perto dos limoeiros//
+printf("Você está ouvindo uma gritaria, o que você faz?\n");
+printf("1.Parar e analisar\n");
+printf("2.Ignorar a gritaria, você irá chamar atenção dos caçadores\n"); //Se o
+jogador leu o jornal vai saber sobre os caçadores//
+scanf("%d", &op3);
+printf ("\n");
+}
+else{
+while(sair!=sa){ //caso o jogador se confunda//
+printf("escreva novamente\n");
+scanf("%s", sa);
+printf ("\n");
+if(strcmp (sair,sa)==0){
+printf("Você saiu do rio,agora continue descendo até chegar perto dos
+limoeiros\n");
+printf("Você está ouvindo uma gritaria, o que você faz?\n");
+printf("1.Parar e analisar\n");
+printf("2.Ignorar a gritaria, você irá chamar atenção dos caçadores\n");
+scanf("%d", &op3);
+printf ("\n");
+break;
+break;
+}
+}
+}
+switch(op3){
+case 2: //Se a escolha foi ignorar a gritaria//
+printf("Os caçadores viram você e atiraram\n GAME OVER\n");
+y++;
+break;
+case 1: //Se a escolha foi analisar//
+printf("Você analisou e viu que tem duas opções:\n");
+printf("1.Pegar a adaga e ajudar seu amigo\n");
+printf("2.Ficar com dó e tentar apenas se livrar do caçador\n");
+printf("O que você faz?\n");
+scanf("%d", &op4);
+printf ("\n");
+if(op4==2){ //Se o jogador ficou com dó//
+printf("Caçadores te mataram\nGAME OVER\n");
+y++;
+}
+if(op4==1){ //Se o jogador lutou com os caçadores//
+printf("Vocês se livraram dos caçadores, bom trabalho!\n"); //
+printf("Você conversa com seu amigo:\nVocê está bem?\nAmigo: sim e
+você... estava aonde?\n"); //Começa diálogo//
+printf("Fugi de algumas abelhas pulando no rio, mas afinal, qual a nossa
+missão??\n");
+printf("Amigo: Você não se lembra?\nNão sei direito, tudo o que achei foi
+uma folha de jornal.\n");
+printf("Amigo: nós precisamos encontrar a Cynara scolymus, ela está quase
+em extinção");
+printf("e precisamos salvá-la, é muito benéfica para a medicina, você quem
+deu a ideia de virmos aqui.\n");
+printf("Para onde vamos agora?\nAmigo: acredito que tenha por trás dos
+arbustos no outro lado do rio\n");
+printf("Digite 0 para prosseguir:\n");
+scanf("%d", &proce);
+printf ("\n");
+if(proce==0){ //Atravessam o rio nadando//
+printf("\"Seguindo caminho pelo rio\"\nVocê e seu amigo devem atravessar
+o rio\n");
+printf("Chegando lá percebem que os arbustos têm espinhos\nVocês tem
+duas opções:\n");
+printf("1.Olhar na mochila, para ver se encontram algo.\n"); //encontram
+um casaco//
+printf("2.Olhar ao redor, para ver se encontram algo.\n"); //encontram
+cascas de árvore seca//
+scanf("%d",&op5);
+printf ("\n");
+}
+else{ //Caso o jogador se confunda//
+while(proce!=0){
+printf("escreva novamente\n");
+scanf("%d", &proce);
+printf ("\n");
+if(proce==0){
+printf("\"Seguindo caminho pelo rio\"\nVocê e seu amigo devem
+atravessar o rio\n");
+printf("Chegando lá percebem que os arbustos têm espinhos\nVocês
+tem duas opções:\n");
+printf("1.Olhar na mochila, para ver se encontram algo.\n");
+printf("2.Olhar ao redor, para ver se encontram algo.\n");
+scanf("%d",&op5);
+printf ("\n");
+break;
+}
+}
+}
+if(op5==1){ //opção olhar na mochila//
+printf("Vocês acharam um casaco\nVestindo o casaco vocês podem
+passar pelos arbustos tranquilamente\n");
+}
+else if(op5==2){ //opção olhar ao redor//
+printf("Vocês acharam cascas de árvore secas\nSe enrolando nas
+cascas de árvore secas ");
+printf("vocês podem passar pelos arbustos tranquilamente\n");
+}
+printf("\n Vocês atravessaram os arbustos e encontraram a planta\n");
+printf("Façam os procedimentos para conseguir transportá-la sem
+matá-la\n");
+printf("Digite 0 para fazer os procedimentos\n");
+scanf("%d", &proce2);
+printf ("\n");
+if(proce2==0){
+printf("END\nA planta foi transportada com segurança\n");
+y++;
+break;
+}
+else{
+while(proce2!=0){
+printf("escreva novamente\n");
+scanf("%d", &proce2);
+printf ("\n");
+if(proce2==0){
+printf("END\nA planta foi transportada com segurança\n");
+y++;
+break;
+}
+}
+}
+}
+}
+}
+}
+if(op1==2){ //Se a escolha foi não levar nada//
+printf("Ok então... Lembre que você teve essa opção\n");
+printf("Narrador:você desde o rio e no caminho encontra um enxame de abelhas
+venenosas\nVocê tem duas opções: \n"); //essa parte é igual, a diferença é no final//
+printf("1.Entrar no rio, se proteger mas se molhar inteiro\n");
+printf("2.Ignorar as picadas e ir atrás do amigo\n");
+scanf("%d", &op2);
+printf ("\n");
+switch(op2){
+case 2:
+printf("Ops, picadas venenosas\nGAME OVER\n");
+y++;
+break;
+case 1:
+printf("Agora as abelhas foram embora, saia do rio para encontrar seu amigo\n");
+printf("Digite \"sair\" para prosseguir\n");
+scanf("%s", sa);
+printf ("\n");
+if(strcmp (sair,sa)==0){
+printf("Você saiu do rio,agora continue descendo até chegar perto dos
+limoeiros\n");
+printf("Você está ouvindo uma gritaria, o que você faz?\n");
+printf("1.Parar e analisar\n");
+printf("2.Ignorar a gritaria, você irá chamar atenção dos caçadores\n");
+scanf("%d", &op3);
+printf ("\n");
+}
+else{ //Se o jogador se confundir//
+while(sair!=sa){
+printf("escreva novamente\n");
+scanf("%s", sa);
+printf ("\n");
+if(strcmp (sair,sa)==0){
+printf("Você saiu do rio,agora continue descendo até chegar perto dos
+limoeiros\n");
+printf("Você está ouvindo uma gritaria, o que você faz?\n");
+printf("1.Parar e analisar\n");
+printf("2.Ignorar a gritaria, você irá chamar atenção dos caçadores\n");
+scanf("%d", &op3);
+printf ("\n");
+break;
+break;
+}
+}
+}
+switch(op3){
+case 2:
+printf("Os caçadores viram você e atiraram\n GAME OVER\n");
+y++;
+break;
+case 1:
+printf("Você analisou e viu que tem duas opções:\n"); //A diferença de ter
+escolhido pegar a adaga ou não//
+printf("1.Ir ajudar seu amigo\n");
+printf("2.Ficar com dó e tentar apenas se livrar do caçador\n");
+printf("O que você faz?\n");
+scanf("%d", &op4);
+printf ("\n");
+if(op4==2){
+printf("Caçadores te mataram\nVocê não estava armado\nGAME OVER\n");
+y++;
+break;
+}
+if(op4==1){
+printf("Caçadores te mataram\nVocê não estava armado\nGAME OVER\n");
+y++;
+break;
+}
+}
+}
+}
+}
+}
+void fase (void){ //Agora o jogo começa a rodar na tela//
+i = 0;
+while (i == 0){
+scanf ("%d", &n1);
+printf ("\n");
+switch (n1){ //explicando um pouco do que aconteceu para ele perder a memória//
+case 1: //Bate cabeça na árvore//
+printf ("Voce bate de cabeça em uma árvore e fica tonto\n");
+printf ("você desmaiou, aperte 1 para continuar\n");
+printf ("\n");
+i++;
+break;
+case 2: // Desmaia sem fôlego de tanto correr//
+printf ("Você olha ao redor e vê uma cobra GIGANTESCA pendurada em uma
+árvore\n");
+printf ("FIQUE LONGE DA COBRA, olhe o acampamento que você está, te
+lembra algo familiar?\n");
+printf ("Se deseja continuar a olhar digite 1 se quer correr digite 2\n");
+printf ("\n");
+i++;
+break;
+case 3:
+printf ("Um silêncio toma conta do local, e o único som que se pode ouvir é do eco
+da sua voz\n");
+printf ("Não há ninguém ao seu redor, apenas coisas jogadas, deseja
+explorar?\n");
+printf ("1. explorar\n"); //encontra a cobra//
+printf ("2. correr\n"); //fica sem fôlego//
+printf ("\n");
+i++;
+break;
+default:
+printf ("Alternativa inválida, redigite\n");
+printf ("\n");
+}
+}
+}
+void casoUm (void){
+i = 0;
+decisao = 0;
+if (n2 == 1){ //Caso ele escolha primeiro subir na árvore//
+printf ("Voce acordou depois de um tempo, e deitado no chão, olhou para o topo de
+uma árvore e viu algo\n");
+printf ("Voce sobe na árvore para explorar e encontra uma mochila\n"); //Aqui que ele
+decide revirar a mochila//
+printf ("\n");
+}
+}
+void casoDois (void){
+i = 0;
+decisao = 0;
+while (i == 0){
+if (n2 == 1){ //Caso ele tenha fugido antes e depois voltado//
+printf ("Você volta ao acampamento e vê algo no topo de uma árvore\n");
+printf ("Curioso, você sobe na árvore para explorar e encontra uma mochila\n\n");
+printf ("\n");
+i++;
+break;
+}
+if (n2 == 2){ //Caso saia correndo e não volte ao acampamento//
+printf ("Você sai correndo pela mata desesperado e encontra um colar no chão, a
+pessoa da foto lhe parece familiar\n");
+printf ("1. Voltar ao acampamento para tentar entender\n"); //Decisão certa//
+printf ("2. Continuar correndo\n"); //decisão errada, fica sem pista//
+printf ("\n");
+scanf ("%d", &decisao);
+printf ("\n");
+}
+n2 = 0;
+switch (decisao){
+case 1:
+printf ("Você volta ao acampamento e vê algo no topo de uma árvore\n");
+printf ("Curioso, você sobe na árvore para explorar e encontra uma mochila\n\n");
+printf ("\n");
+i++;
+n2 = 1;
+break;
+case 2: //Não dá para o jogo continuar se o jogador não descobrir as pistas//
+printf ("Voce cai em um rio e é devorado por um crocodilo\n");
+printf ("\n");
+printf ("GAME OVER");
+x = 1;
+y = 1;
+n2 = 0;
+i++;
+break;
+default:
+printf ("Alternativa inválida, redigite\n");
+scanf ("%d", &decisao);
+printf ("\n");
+}
+}
+}
+void casoTres (void){
+i = 0;
+decisao = 0;
+if (n2 == 1){ //Caso escolha observar onde está antes de fazer algo//
+printf ("Voce começa a explorar aos arredores do local e se depara com algo no topo
+de uma árvore\n");
+printf ("Curioso, você sobe na árvore para explorar e encontra uma mochila\n\n");
+printf ("\n");
+}
+if (n2 == 2){ //Caso saia correndo, mas depois de achar o colar muda de ideia//
+printf ("Voce sai correndo pela mata desesperado e encontra um colar no chão, a
+pessoa da foto lhe parece familiar\n");
+printf ("Voce volta para o acampamento e uma mochila cai em sua cabeça\n");
+printf ("\n");
+}
+}
